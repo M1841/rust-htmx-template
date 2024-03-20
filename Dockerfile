@@ -40,6 +40,7 @@ USER appuser
 
 COPY --from=rust-build /bin/server /bin/
 COPY --from=node-build /www /www/
+COPY Rocket.toml ./ 
 
 ENV ROCKET_ADDRESS=0.0.0.0
 

@@ -1,0 +1,4 @@
+/.idea
+/target
+/www/node_modules
+/www/styles/tailwind-output.css

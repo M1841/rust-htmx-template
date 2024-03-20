@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {{#if is_dev}}
+        <!-- Development CDNs -->
+        <!-- Tailwind CSS CDN -->
+        <script src="https://cdn.tailwindcss.com"></script>
+
+        <!-- Google Fonts CDN -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <!-- Inter Font -->
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    {{ else }}
+        <!-- Tailwind CSS Dynamically Generated File -->
+        <link rel="stylesheet" href="/styles/tailwind_output.css" />
+    {{/if}}
+
+    <!-- HTMX Source -->
+    <script src="/scripts/htmx.min.js"></script>
+
+    <title>Rocket + HTMX</title>
+</head>
+<body class="bg-gradient-to-tl from-zinc-900 to-zinc-950/90 text-zinc-50/90 flex flex-col justify-center items-center h-screen w-screen" style="font-family: Inter, sans-serif">
+
+    <header class="flex flex-row justify-center items-center gap-8 mb-12">
+        <a href="https://rocket.rs/" target="_blank" class="relative hover:opacity-70 transition-all w-32 h-32 bg-[#d33847] rounded-full flex justify-center items-center -rotate-45 border-[#fffffe] border-[3px]">
+            <img src="/public/rocket-icon.svg" alt="Echo" class="w-28"/>
+        </a>
+        <a href="https://htmx.org/" target="_blank" class="text-8xl font-bold text-[#e2dfdb] hover:opacity-70 transition-all">
+            &lt;<span class="text-[#3d72d7]">/</span>&gt;
+        </a>
+    </header>
+
+    <h1 class="text-5xl font-semibold mb-12">Rocket + HTMX</h1>
+
+    {{> buttons}}
+
+    <section class="flex flex-col justify-center items-center text-sm gap-1 mt-12">
+        <p>
+            Edit <code>www/views/index.html.hbs</code> to see changes
+        </p>
+        <p class="text-zinc-300/50 mt-12">
+            Click on the Rocket and HTMX logos to learn more
+        </p>
+    </section>
+</body>
+</html>
